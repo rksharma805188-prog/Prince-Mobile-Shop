@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prince Mobile Order</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+margin:0;
+}
+
+.header{
+background:#0d6efd;
+color:white;
+text-align:center;
+padding:20px;
+font-size:28px;
+}
+
+.container{
+width:450px;
+background:white;
+margin:50px auto;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+h2{
+text-align:center;
+color:#333;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:5px;
+border:1px solid #ccc;
+font-size:15px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0d6efd;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+margin-top:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#084298;
+}
+
+.mobile-box{
+text-align:center;
+margin-bottom:15px;
+}
+
+.mobile-box img{
+width:150px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🛒 Prince Mobile Order Page
+</div>
+
+<div class="container">
+
+<h2>Order Your Mobile</h2>
+
+<div class="mobile-box">
+<img src="C:\Users\hp\OneDrive\Desktop\Prince Mobile\All Phone.jpeg">
+</div>
+
+<select id="mobile">
+<option>Select Mobile</option>
+<option>iPhone 14</option>
+<option>Samsung Galaxy S23</option>
+<option>Realme Narzo</option>
+<option>Redmi Note 12</option>
+<option>Vivo t2 pro</option>
+<option>Oppo f11 pro</option>
+<option>Motorola g35</option>
+<option>Ai+ Nova</option>
+<option>Techno Spark 30C</option>
+<option>Poco C75</option>
+</select>
+
+<input type="text" id="name" placeholder="Customer Name">
+
+<input type="number" id="phone" placeholder="Phone Number">
+
+<textarea id="address" placeholder="Delivery Address"></textarea>
+
+<button onclick="order()">Place Order</button>
+
+</div>
+
+<script>
+
+function order(){
+
+let mobile=document.getElementById("mobile").value;
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let address=document.getElementById("address").value;
+
+if(mobile=="Select Mobile" || name=="" || phone=="" || address==""){
+alert("Please fill all details");
+return;
+}
+
+let message = "New Order%0A"+
+"Mobile: "+mobile+"%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Address: "+address;
+
+let yourNumber = "7520997981"; 
+
+window.open("https://wa.me/"+yourNumber+"?text="+message);
+
+}
+
+</script>
+
+</body>
+</html>

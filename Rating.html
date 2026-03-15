@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prince Mobile Reviews</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+margin:0;
+padding:0;
+}
+
+.header{
+background:#0d6efd;
+color:white;
+padding:20px;
+text-align:center;
+font-size:28px;
+}
+
+.container{
+width:500px;
+background:white;
+margin:40px auto;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+h2{
+text-align:center;
+color:#333;
+}
+
+.stars{
+font-size:30px;
+text-align:center;
+cursor:pointer;
+}
+
+.star{
+color:gray;
+}
+
+.star.active{
+color:gold;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0d6efd;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+margin-top:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#084298;
+}
+
+.reviews{
+margin-top:30px;
+}
+
+.review-box{
+background:#f9f9f9;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.review-box img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.review-text{
+flex:1;
+}
+
+.rating{
+color:gold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+⭐ Prince Mobile Customer Reviews
+</div>
+
+<div class="container">
+
+<h2>Give Your Review</h2>
+
+<div class="stars">
+<span class="star" onclick="rate(1)">⭐</span>
+<span class="star" onclick="rate(2)">⭐</span>
+<span class="star" onclick="rate(3)">⭐</span>
+<span class="star" onclick="rate(4)">⭐</span>
+<span class="star" onclick="rate(5)">⭐</span>
+</div>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="file" id="photo">
+
+<textarea id="review" placeholder="Write your review..."></textarea>
+
+<button onclick="submitReview()">Submit Review</button>
+
+<div class="reviews" id="reviews"></div>
+
+</div>
+
+<script>
+
+let rating = 0;
+
+function rate(star){
+rating = star;
+let stars = document.querySelectorAll(".star");
+
+stars.forEach((s,i)=>{
+if(i < star){
+s.classList.add("active");
+}else{
+s.classList.remove("active");
+}
+});
+}
+
+function submitReview(){
+
+let name = document.getElementById("name").value;
+let review = document.getElementById("review").value;
+let photo = document.getElementById("photo").files[0];
+
+if(name=="" || review=="" || rating==0){
+alert("Please fill all fields");
+return;
+}
+
+let reader = new FileReader();
+
+reader.onload = function(e){
+
+let stars = "⭐".repeat(rating);
+
+let html = `
+<div class="review-box">
+<img src="${e.target.result}">
+<div class="review-text">
+<b>${name}</b>
+<div class="rating">${stars}</div>
+<p>${review}</p>
+</div>
+</div>
+`;
+
+document.getElementById("reviews").innerHTML += html;
+
+}
+
+if(photo){
+reader.readAsDataURL(photo);
+}
+
+document.getElementById("name").value="";
+document.getElementById("review").value="";
+}
+
+</script>
+
+</body>
+</html>

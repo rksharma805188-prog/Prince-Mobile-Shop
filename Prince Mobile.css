@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+.welcome-box{
+display:flex;
+align-items:center;
+justify-content:left;
+gap:250px;
+}
+
+.welcome-img{
+width:200px;
+height:100px;
+object-fit:cover;
+}
+
+.welcome-box h1{
+margin:0;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-card {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    width: 250px;
+    text-align: center;
+    border-radius: 5px;
+}
+    .product-card:hover {
+    transform: scale(1.05); /* Make it slightly bigger  */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    cursor: pointer; /* Change cursor to hand pointer */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+
+.container {
+    display: flex;
+    align-items: flex-start; /* Both should come in the top line */
+    gap: 20px; /* A little space between two */
+}
+
+.owner {
+    width: 180px; /* Fix the width of the slider */
+}
+.image-slider{
+    flex: 1; /* Fill in the blank space */
+    height: 550px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides{
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.slides img{
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.gallery {
+    display: block;
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+    margin-top: 40px 0; /* Add Some Space from the top after the owner section */
+}
+
+.gallery-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-images img {
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.top-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #d5b8b8;
+    padding: 10px 0;
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+.nav-item a {
+    color: rgb(6, 6, 6);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nav-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    border: 2px solid transparent;
+    border-radius: 10px; /* हल्का गोल किनारा */
+}
+
+.nav-item a:hover {
+    transform: scale(1.1);
+    background-color: #555;
+    border: 2px solid #fff;
+}
+.top-nav {
+    position: fixed;   /* बार को फिक्स्ड बनाएं */
+    top: 0;            /* सबसे ऊपर रखें */
+    width: 100%;    /* पूरी चौड़ाई लें */
+    background-color: #d8bfbf; /* तुम्हारा बैकग्राउंड कलर */
+    padding: 10px 0;    /* ऊपर-नीचे थोड़ी स्पेस */
+    z-index: 1000;  /* ताकि यह अन्य चीजों के ऊपर रहे */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 0; /* यहाँ ऊपर का padding बढ़ा दिया */
+    background: #f4f4f4;
+}
+.top-nav {
+    position: -webkit-sticky; /* सफारी के लिए */
+    position: sticky;
+    top: 0;               /* सबसे ऊपर टच होने पर */
+    background-color: #d8bfbf;
+    z-index: 1000; /* ताकि वो ऊपर रहे */
+    padding: 10px 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+#contact-dropdown {
+    background-color: #ffffff; /* सफेद बैकग्राउंड */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: max-height 0.5s ease-out;
+}
+
+.contact-link {
+    display: block;        /* हर लिंक को ब्लॉक करें ताकि अलग लाइन में आए */
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-link:hover {
+    transform: scale(1.05); /* हल्का बड़ा हो जाए */
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* हरा रंग */
+    color: white;
+}
+
+.instagram-button {
+    background-color: #E1306C; /* पिंक रंग */
+    color: white;
+}
+
+.facebook-button {
+    background-color: #1877F2; /* ब्लू रंग */
+    color: white;
+}
+#contact-dropdown {
+    display: none; /* डिफॉल्ट रूप से छिपा */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #ffffff;
+    padding: 0 20px;
+}
+
+#contact-dropdown.active {
+    display: block; /* जब एक्टिव हो तब दिखे */
+    max-height: 300px;
+    padding: 20px;
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
